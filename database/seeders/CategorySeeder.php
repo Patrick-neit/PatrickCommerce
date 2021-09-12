@@ -49,7 +49,7 @@ class CategorySeeder extends Seeder
         ];
 
         foreach ($categories as $category){
-            Category::create();
+            Category::factory(1)-> create($category); //Creamos con factory 1 por cada vez
         }
     }
 }
