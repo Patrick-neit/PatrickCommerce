@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $guarded = ['id','created_At','updated_at']; //Estos campos no recibiran asignacion masiva
+    const Borrador=1; //Status del producto
+    const Publicado = 2;
+    protected $guarded = ['id','created_at','updated_at']; //Estos campos no recibiran asignacion masiva
 
     //Relacion 1 a * inversa product recibe de brand
     public function brand(){
@@ -27,7 +29,7 @@ class Product extends Model
 
     //Relacion * a * products y colors
     public function colors(){
-        return $this ->hasMany(Color::class);
+        return $this ->belongsToMany(Color::class);
     }
     //Relacion 1 a * poliformica con images -- Le paso el modelo image y el metodo "imageable" definido en el modelo image
     public function images(){

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Brand;
 use App\Models\Category;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str; // Permite convertir cadenas en slugs
@@ -49,7 +50,12 @@ class CategorySeeder extends Seeder
         ];
 
         foreach ($categories as $category){
-            Category::factory(1)-> create($category); //Creamos con factory 1 por cada vez
+          $category =  Category::factory(1)-> create($category)->first(); //Creamos con factory 1 por cada vez y accedemos al id del primer reg
+
+            $brands = Brand::factory(4)->create();
+            foreach ($brands as $brand){
+                $brand->categories()->attach($category->id);
+            }
         }
     }
 }

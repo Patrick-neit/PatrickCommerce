@@ -111,24 +111,32 @@ class SubcategorySeeder extends Seeder
                 'category_id'=> 5,
                 'name' => 'Mujeres',
                 'slug'=> Str::slug('Mujeres') ,
+                'color' => true,
+                'size' =>true,
 
             ],
             [   //Moda
                 'category_id'=> 5,
                 'name' => 'Hombres',
                 'slug'=> Str::slug('Hombres') ,
+                'color' => true,
+                'size' =>true,
 
             ],
             [   //Moda
                 'category_id'=> 5,
                 'name' => 'Lentes',
                 'slug'=> Str::slug('Lentes') ,
+                'color' => true,
+                'size' =>true,
 
             ],
             [   //Moda
                 'category_id'=> 5,
                 'name' => 'Relojes',
                 'slug'=> Str::slug('Relojes') ,
+                'color' => true,
+                'size' =>true,
 
             ],
         ];

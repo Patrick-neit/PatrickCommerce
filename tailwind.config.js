@@ -1,4 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
+const { rose } = require('tailwindcss/colors');
+
 
 module.exports = {
     mode: 'jit',
@@ -14,6 +17,12 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                 trueGray: colors.trueGray,
+                 red: colors.red,
+                 teal: colors.teal,
+                 rose: colors.rose
+              }
         },
     },
 
