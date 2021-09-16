@@ -4,7 +4,7 @@ const { rose } = require('tailwindcss/colors');
 
 
 module.exports = {
-    mode: 'jit',
+    //mode: 'jit', agregar esta linea cuando haga deploy
     purge: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './vendor/laravel/jetstream/**/*.blade.php',
