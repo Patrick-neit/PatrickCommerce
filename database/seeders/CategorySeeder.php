@@ -21,31 +21,31 @@ class CategorySeeder extends Seeder
             [
                 'name' => 'Celulares y tablets',
                 'slug' => Str::slug('Celulares y tablets') ,                        //Urls amigables
-                'icon'=> 'fas fa-tablet-alt'
+                'icon' => '<i class="fas fa-mobile-alt"></i>'
             ],
 
             [
                 'name' => 'Tv,s Audio y Video',
                 'slug' => Str::slug('Tv,s Audio y Video') ,                        //Urls amigables
-                'icon'=> 'fas fa-tv'
+                'icon' => '<i class="fas fa-tv"></i>'
             ],
 
             [
                 'name' => 'Consolas y VideoJuegos',
                 'slug' => Str::slug('Consolas y VideoJuegos') ,                        //Urls amigables
-                'icon' => 'fas fa-gamepad'
+                'icon' => '<i class="fas fa-gamepad"></i>'
             ],
 
             [
                 'name' => 'Computacion',
                 'slug' => Str::slug('Computacion') ,                        //Urls amigables
-                'icon' => 'fas fa-network-wired'
+                'icon' => '<i class="fas fa-laptop"></i>'
             ],
 
             [
                 'name' => 'Moda',
                 'slug' => Str::slug('Moda') ,                        //Urls amigables
-                'icon' => 'fab fa-modx'
+                'icon' => '<i class="fas fa-tshirt"></i>'
             ]
         ];
 

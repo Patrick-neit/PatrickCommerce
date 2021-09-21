@@ -1,4 +1,20 @@
-<header class=" bg-trueGray-700">
+
+
+
+<header class=" bg-trueGray-700 sticky top-0" x-data="{open: true}">
+    <!--Tamaño de la barra de nav usando Css-->
+    <style>
+        #navigation-menu{
+            height: calc(100vh - 4rem) ;
+            color: rebeccapurple;
+
+        }
+        .navigation-link:hover .navigation-submenu{
+        display:block !important; /*El important es para que ignore los demas stilos que tenga*/
+
+        }
+
+    </style>
     <div class="container flex items-center h-16" > <!--Agregamos estilos alto, ancho y el bottom-->
        <a class="flex flex-col items-center justify-center px-4 bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">
 
@@ -71,7 +87,7 @@
             </x-slot>
         </x-jet-dropdown>
 
-        @else
+        @else<!--Si no esta logeado-->
         <x-jet-dropdown align="right" width="48">
             <x-slot name="trigger">
                 <i class="fas fa-user-circle text-white text-3xl cursor-pointer"> </i>
@@ -90,5 +106,38 @@
     </div>
     @livewire('dropdown-cart')
     </div>
+
+    <!--Barra de navegacion que muestra categorias y fondo de la vista cuanto estoy logeado-->
+            <nav id="navigation-menu" class="bg-trueGray-700 bg-opacity-25 w-full absolute" >
+                <div class="container h-full">
+                    <div class="grid grid-cols-4 h-full relative">
+                        <ul class="bg-white">
+                            @foreach ($categories as $category )
+
+                                <li class="navigation-link hover:text-gray-100 hover:bg-red-400">
+                                    <a href="" class="py-2 px-4 text-sm flex items-center">
+                                        <span class="flex justify-center w-9">
+                                        {!!$category->id!!}   <!--Pongo !! para que me lean los iconos-->
+                                        </span>
+                                        {{$category->name}}
+                                    </a>
+                                    <div class="navigation-submenu  bg-gray-200 absolute w-3/4 h-full top-0 right-0 hidden">
+
+                                        <x-navigation-subcategories :category="$category" />
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                        <!--Diseño de la vista de subcategorias. Que al hacer click en una category se muestre su subcategory-->
+
+                        <div class="col col-span-3 bg-gray-200">
+                           <x-navigation-subcategories :category="$category->first()" />
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </nav>
 
 </header>
