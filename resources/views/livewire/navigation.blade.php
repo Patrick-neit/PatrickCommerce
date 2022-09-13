@@ -1,7 +1,7 @@
 
 
 
-<header class=" bg-trueGray-700 sticky top-0" x-data="{open: true}">
+<header class=" bg-trueGray-700 sticky top-0" x-data = "{open: false}">
     <!--Tamaño de la barra de nav usando Css-->
     <style>
         #navigation-menu{
@@ -10,21 +10,25 @@
 
         }
         .navigation-link:hover .navigation-submenu{
-        display:block !important; /*El important es para que ignore los demas stilos que tenga*/
+        display:block !important; /*El important es para que ignore los demas styls que tenga*/
 
         }
 
     </style>
     <div class="container flex items-center h-16" > <!--Agregamos estilos alto, ancho y el bottom-->
-       <a class="flex flex-col items-center justify-center px-4 bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">
 
-        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-            <path : class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+       <a
+            x-on:click= "open = !open"
 
-        </svg>
-        <span>
-            Categorias
-        </span>
+            class="flex flex-col items-center justify-center px-4 bg-white bg-opacity-25 text-white cursor-pointer font-semibold h-full">
+
+            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                <path : class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+
+            </svg>
+            <span>
+                Categorias
+            </span>
        </a>
 
        <a href="/" class="mx-6" >
@@ -104,13 +108,20 @@
         </x-jet-dropdown>
         @endauth
     </div>
-    @livewire('dropdown-cart')
+        <div class="hidden md:block">
+            @livewire('dropdown-cart')
+        </div>
     </div>
 
     <!--Barra de navegacion que muestra categorias y fondo de la vista cuanto estoy logeado-->
-            <nav id="navigation-menu" class="bg-trueGray-700 bg-opacity-25 w-full absolute" >
+            <nav id="navigation-menu"
+            :class="{'block': open, 'hidden': !open}"
+                class="bg-trueGray-700 bg-opacity-25 w-full absolute" >
+
                 <div class="container h-full">
-                    <div class="grid grid-cols-4 h-full relative">
+                    <div
+                    x-on:click.away="open= false"
+                    class="grid grid-cols-4 h-full relative">
                         <ul class="bg-white">
                             @foreach ($categories as $category )
 

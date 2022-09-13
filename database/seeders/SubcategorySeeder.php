@@ -19,46 +19,46 @@ class SubcategorySeeder extends Seeder
         $subcategories=[
             [   //Categoria celulares y tablets
                 'category_id'=>1,
-                'name' => 'Celulares y Smartphones',
-                'slug'=> Str::slug('Celulares y Smartphones') ,
+                'name' => 'Joggers',
+                'slug'=> Str::slug('Joggers') ,
                 'color'=> true
             ],
 
             [   //Categoria celulares y tablets
                 'category_id'=> 1,
-                'name' => 'Accesorios para Celulares',
-                'slug'=> Str::slug('Accesorios para Celulares') ,
+                'name' => 'Blusas',
+                'slug'=> Str::slug('Blusas') ,
 
             ],
 
             [   //Categoria celulares y tablets
                 'category_id'=> 1,
-                'name' => 'Smartwatches',
-                'slug'=> Str::slug('Smartwatches') ,
+                'name' => 'Basicas',
+                'slug'=> Str::slug('Basicas') ,
 
             ],
 
             [   //Tv y audio
                 'category_id'=> 2,
-                'name' => 'Tv y Audio',
-                'slug'=> Str::slug('Tv y Audio') ,
+                'name' => 'Anillos',
+                'slug'=> Str::slug('Anillos') ,
 
             ],
 
             [   //Tv y audio
                 'category_id'=> 2,
-                'name' => 'Audios',
-                'slug'=> Str::slug('Audios') ,
+                'name' => 'Manillas',
+                'slug'=> Str::slug('Manillas') ,
 
             ],
             [   //Tv y audio
                 'category_id'=> 2,
-                'name' => 'Audios para Autos',
+                'name' => 'Aros',
                 'slug'=> Str::slug('Audios para Autos') ,
 
             ],
 
-            [   //Consola y videojuegos
+           /* [   //Consola y videojuegos
                 'category_id'=> 3,
                 'name' => 'Xboxs',
                 'slug'=> Str::slug('Xboxs') ,
@@ -138,7 +138,7 @@ class SubcategorySeeder extends Seeder
                 'color' => true,
                 'size' =>true,
 
-            ],
+            ],*/
         ];
         foreach ($subcategories as $subcategory){
             Subcategory::factory(1)->create($subcategory); //Que se cree 1 subcategory por cada iteracion
